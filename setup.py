@@ -12,9 +12,6 @@
 
 from __future__ import absolute_import, print_function
 
-import os
-import re
-
 from setuptools import find_packages, setup
 
 readme = open('README.rst').read()
@@ -49,31 +46,21 @@ setup_requires = [
 
 packages = find_packages()
 
-version_template = """\
-# -*- coding: utf-8 -*-
-# Do not change the format of this next line. Doing so risks breaking
-# setup.py and docs/conf.py
-\"\"\"Version information for dictdiffer package.\"\"\"
-
-__version__ = {version!r}
-"""
+import dictdiffer
 
 setup(
-    name='dictdiffer',
-    use_scm_version={
-        'local_scheme': 'dirty-tag',
-        'write_to': os.path.join('dictdiffer', 'version.py'),
-        'write_to_template': version_template,
-    },
+    name='dictdiffer-jira-offline-fork',
+    version=dictdiffer.__version__,
     description=__doc__,
     long_description=readme,
+    long_description_content_type='text/markdown',
     author='Invenio Collaboration',
     author_email='info@inveniosoftware.org',
-    url='https://github.com/inveniosoftware/dictdiffer',
+    url='https://github.com/mafrosis/dictdiffer',
     project_urls={
         'Changelog': (
-            'https://github.com/inveniosoftware/dictdiffer'
-            '/blob/master/CHANGES'
+            'https://github.com/mafrosis/dictdiffer'
+            'blob/master/CHANGES'
         ),
         'Docs': 'https://dictdiffer.rtfd.io/',
     },
